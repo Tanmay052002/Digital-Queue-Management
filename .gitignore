@@ -6,6 +6,7 @@ bin/
 obj/
 .vs/
 *.log
+.md
 
 # Environment and Properties files
 .env
