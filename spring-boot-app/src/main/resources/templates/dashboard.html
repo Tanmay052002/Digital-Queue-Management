@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Queue Management System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="topbar">
+    <a th:href="@{/logout}">Logout</a>
+</div>
+
+<div class="container">
+    <h1>Welcome, <span th:text="${user.name}"></span></h1>
+    <h2>Select an Office</h2>
+
+    <div class="box-container">
+        <a th:each="office : ${offices}"
+           class="office-box"
+           th:href="@{'/office/' + ${office.id} + '/services'}"
+           th:text="${office.name}">
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

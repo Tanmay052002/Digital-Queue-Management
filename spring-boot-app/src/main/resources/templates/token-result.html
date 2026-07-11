@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Token</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="topbar">
+    <a th:href="@{/logout}">Logout</a>
+</div>
+
+<div class="container">
+    <h1>Token Generated!</h1>
+
+    <div class="token-box" th:text="${token.tokenNumber}"></div>
+
+    <table>
+        <tr>
+            <th>Service</th>
+            <td th:text="${service.name}"></td>
+        </tr>
+        <tr>
+            <th>Counter Number</th>
+            <td th:text="${counter.counterNumber}"></td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td th:text="${token.status}"></td>
+        </tr>
+        <tr>
+            <th>Notification</th>
+            <td th:text="${notificationSent} ? 'Sent to your phone (via notification service)' : 'Could not send (notification service offline) - token still valid'"></td>
+        </tr>
+    </table>
+
+    <p><a th:href="@{'/office/' + ${service.officeId} + '/services'}">&laquo; Back to services</a></p>
+    <p><a th:href="@{/dashboard}">&laquo; Back to dashboard</a></p>
+</div>
+
+</body>
+</html>

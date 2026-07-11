@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Services - Queue Management System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="topbar">
+    <a th:href="@{/logout}">Logout</a>
+</div>
+
+<div class="container">
+    <h1 th:text="${office.name} + ' - Services'"></h1>
+
+    <ul class="service-list">
+        <li th:each="service : ${services}">
+            <span th:text="${service.name}"></span>
+            <span>
+                <a class="btn" th:href="@{'/service/' + ${service.id} + '/generate-token'}">Generate Token</a>
+                <a class="btn" th:href="@{'/service/' + ${service.id} + '/slots'}">Slot Availability</a>
+            </span>
+        </li>
+    </ul>
+
+    <a th:href="@{/dashboard}">&laquo; Back to dashboard</a>
+</div>
+
+</body>
+</html>

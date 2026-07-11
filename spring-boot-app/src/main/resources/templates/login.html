@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Queue Management System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Queue Management System</h1>
+    <h2>Login</h2>
+
+    <p class="error" th:if="${error != null}" th:text="${error}"></p>
+
+    <form th:action="@{/login}" method="post">
+        <label>Username</label>
+        <input type="text" name="username" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p style="text-align:center; margin-top:20px; color:#666;">
+        Demo login - username: <b>student</b> / password: <b>student123</b>
+    </p>
+</div>
+
+</body>
+</html>

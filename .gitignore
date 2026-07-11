@@ -1,0 +1,21 @@
+target/
+*.class
+.idea/
+*.iml
+bin/
+obj/
+.vs/
+*.log
+
+# Environment and Properties files
+.env
+.env.local
+.env.*.local
+*.properties
+!application-example.properties
+src/main/resources/application.properties
+
+# Sensitive configuration
+config/
+credentials/
+secrets/

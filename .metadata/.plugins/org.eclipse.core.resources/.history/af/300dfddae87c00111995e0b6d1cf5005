@@ -1,0 +1,24 @@
+spring.application.name=queue-management-system
+
+# H2 in-memory database - resets every time app restarts, easy for demo
+spring.datasource.url=jdbc:h2:mem:queuedb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+# let hibernate create the tables from our entities every time
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+# run data.sql AFTER hibernate creates the tables
+spring.jpa.defer-datasource-initialization=true
+spring.sql.init.mode=always
+
+server.port=8080
+
+# URL of the separate ASP.NET Core notification microservice
+notification.service.url=http://localhost:5000

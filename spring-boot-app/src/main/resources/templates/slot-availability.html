@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Slot Availability</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="topbar">
+    <a th:href="@{/logout}">Logout</a>
+</div>
+
+<div class="container">
+    <h1>Slot Availability</h1>
+    <h2 th:text="${service.name}"></h2>
+
+    <table>
+        <tr>
+            <th>Counter Number</th>
+            <th>Total Slots</th>
+            <th>Available Slots</th>
+        </tr>
+        <tr th:each="row : ${slotInfo}">
+            <td th:text="${row.counterNumber}"></td>
+            <td th:text="${row.maxSlots}"></td>
+            <td th:text="${row.availableSlots}"></td>
+        </tr>
+    </table>
+
+    <p><a th:href="@{'/service/' + ${service.id} + '/generate-token'}">Generate a token for this service &raquo;</a></p>
+    <p><a th:href="@{'/office/' + ${service.officeId} + '/services'}">&laquo; Back to services</a></p>
+</div>
+
+</body>
+</html>
